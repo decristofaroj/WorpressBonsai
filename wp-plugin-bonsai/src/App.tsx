@@ -1,3 +1,4 @@
+// START ./wp-plugin-bonsai/src/App.tsx
 import React, { useState, useCallback, useMemo, useEffect } from 'react';
 import JSZip from 'jszip';
 import { Header } from '@/components/Header';
@@ -7,7 +8,7 @@ import { Loader } from '@/components/Loader';
 import { performLocalAnalysis } from '@/services/localAnalysisService';
 import * as aiService from '@/services/aiService';
 import * as storageService from '@/services/storageService';
-import { ReviewIssue, Plugin, PluginFile, AppMode, Workspace, ConfirmationState, ProviderStatus, AIModel } from '@/types';
+import { ReviewIssue, Plugin, PluginFile, AppMode, Workspace, ConfirmationState, ProviderStatus } from '@/types';
 import { IntegrationBuilder } from '@/components/IntegrationBuilder';
 import { PluginBuilder } from '@/components/PluginBuilder';
 import { PluginPackager } from '@/components/PluginPackager';
@@ -391,7 +392,7 @@ function App(): React.ReactNode {
                             const updatedPlugins = activeWorkspace.plugins.map(p => {
                                 if (p.id === pluginId) {
                                     const existingIndex = p.files.findIndex(f => f.name.toLowerCase() === fileName.toLowerCase());
-                                    let newFiles = [...p.files];
+                                    const newFiles = [...p.files];
                                     if (existingIndex !== -1) newFiles[existingIndex] = newFile;
                                     else newFiles.push(newFile);
                                     return { ...p, files: newFiles };
@@ -497,3 +498,4 @@ function App(): React.ReactNode {
 }
 
 export default App;
+// END ./wp-plugin-bonsai/src/App.tsx

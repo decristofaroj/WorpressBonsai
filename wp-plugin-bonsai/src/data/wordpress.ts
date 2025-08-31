@@ -1,3 +1,4 @@
+// START ./wp-plugin-bonsai/src/data/wordpress.ts
 // A subset of deprecated WordPress functions for demonstration.
 export const deprecatedWordPressFunctions = new Set([
   'add_contextual_help', 'add_option_whitelist', 'the_attachment_links',
@@ -10,3 +11,4 @@ export const deprecatedWordPressFunctions = new Set([
   '__ngettext_noop', 'like_escape', 'wp_specialchars', 'register_sidebar_widget',
   'unregister_sidebar_widget', 'register_widget_control', 'unregister_widget_control',
 ]);
+// END ./wp-plugin-bonsai/src/data/wordpress.ts

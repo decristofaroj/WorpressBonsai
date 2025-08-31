@@ -1,3 +1,4 @@
+// START ./wp-plugin-bonsai/src/components/Header.tsx
 import React from 'react';
 
 interface HeaderProps {
@@ -23,3 +24,4 @@ export function Header({ children }: HeaderProps): React.ReactNode {
     </header>
   );
 }
+// END ./wp-plugin-bonsai/src/components/Header.tsx

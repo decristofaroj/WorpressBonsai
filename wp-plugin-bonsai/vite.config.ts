@@ -1,3 +1,4 @@
+// START ./wp-plugin-bonsai/vite.config.ts
 import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from 'path'
@@ -30,3 +31,4 @@ export default defineConfig(({ mode }) => {
     },
   }
 })
+// END ./wp-plugin-bonsai/vite.config.ts

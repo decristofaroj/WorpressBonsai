@@ -1,3 +1,4 @@
+// START ./wp-plugin-bonsai/src/components/EmptyState.tsx
 import React from 'react';
 import type { AppMode } from '@/types';
 
@@ -42,3 +43,4 @@ export function EmptyState({ mode }: EmptyStateProps): React.ReactNode {
         </div>
     );
 }
+// END ./wp-plugin-bonsai/src/components/EmptyState.tsx

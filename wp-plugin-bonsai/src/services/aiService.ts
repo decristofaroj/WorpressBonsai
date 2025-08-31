@@ -1,3 +1,4 @@
+// START ./wp-plugin-bonsai/src/services/aiService.ts
 import { models } from '@/config/models';
 // Fix: Imported ChatMessage and ProviderStatus from the centralized types file.
 import type { Plugin, ReviewIssue, AIModel, Provider, IntegrationResponse, FileModificationPlan, PluginBuildResponse, GeneratedFileResponse, BlueprintResponse, ChatMessage, ProviderStatus } from '@/types';
@@ -99,3 +100,4 @@ export const generateSingleFile = (p: Plugin, d: string, id: string, ps: Provide
 export const generateBlueprint = (m: ChatMessage[], id: string, ps: ProviderStatus, fn: (m: string) => void) => executeWithFailover(blueprintRunners, id, ps, fn, m);
 export const buildPlugin = (m: ChatMessage[], f: { name: string, content: string } | null, id: string, ps: ProviderStatus, fn: (m: string) => void) => executeWithFailover(pluginBuildRunners, id, ps, fn, m, f);
 export const packagePlugin = (f: {name: string, content: string}[], a: LocalPackageAnalysis, id: string, ps: ProviderStatus, fn: (m: string) => void) => executeWithFailover(pluginPackageRunners, id, ps, fn, f, a);
+// END ./wp-plugin-bonsai/src/services/aiService.ts

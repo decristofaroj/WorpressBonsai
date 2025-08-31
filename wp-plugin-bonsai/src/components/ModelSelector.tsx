@@ -1,3 +1,4 @@
+// START ./wp-plugin-bonsai/src/components/ModelSelector.tsx
 import React from 'react';
 import type { AIModel } from '@/types';
 
@@ -30,3 +31,4 @@ export function ModelSelector({ models, selectedModelId, onModelChange, disabled
     </div>
   );
 }
+// END ./wp-plugin-bonsai/src/components/ModelSelector.tsx

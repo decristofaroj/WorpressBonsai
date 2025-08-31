@@ -1,3 +1,4 @@
+// START ./wp-plugin-bonsai/src/services/openaiService.ts
 import OpenAI from 'openai';
 import type { Plugin, ReviewIssue, IntegrationResponse, FileModificationPlan, PluginBuildResponse, GeneratedFileResponse, BlueprintResponse, ChatMessage } from '@/types';
 import * as schemas from '@/config/schemas';
@@ -113,3 +114,4 @@ export const runOpenAIPluginPackage = async (files: {name: string, content: stri
     { role: 'user', content: prompts.getPluginPackagePrompt(files, analysis) }
   ]);
 };
+// END ./wp-plugin-bonsai/src/services/openaiService.ts

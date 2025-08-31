@@ -1,3 +1,4 @@
+// START ./wp-plugin-bonsai/src/services/storageService.ts
 import { get, set } from 'idb-keyval';
 import type { Workspace, ProviderStatus } from '@/types';
 
@@ -45,3 +46,4 @@ export async function loadProviderStatus(): Promise<ProviderStatus | undefined> 
         return undefined;
     }
 }
+// END ./wp-plugin-bonsai/src/services/storageService.ts

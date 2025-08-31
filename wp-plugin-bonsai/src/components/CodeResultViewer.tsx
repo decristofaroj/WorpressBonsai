@@ -1,3 +1,4 @@
+// START ./wp-plugin-bonsai/src/components/CodeResultViewer.tsx
 import React, { useState } from 'react';
 import JSZip from 'jszip';
 
@@ -82,3 +83,4 @@ export function CodeResultViewer({ files, title, defaultZipName = 'code-result.z
         </div>
     );
 }
+// END ./wp-plugin-bonsai/src/components/CodeResultViewer.tsx

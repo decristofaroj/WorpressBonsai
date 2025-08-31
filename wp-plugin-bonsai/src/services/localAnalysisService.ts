@@ -1,3 +1,4 @@
+// START ./wp-plugin-bonsai/src/services/localAnalysisService.ts
 import PhpParser from 'php-parser';
 import type { Node, Identifier } from 'php-parser';
 import type { Plugin, ReviewIssue } from '@/types';
@@ -127,3 +128,4 @@ export const performLocalAnalysis = (plugins: Plugin[]): ReviewIssue[] => {
 
   return allIssues;
 };
+// END ./wp-plugin-bonsai/src/services/localAnalysisService.ts

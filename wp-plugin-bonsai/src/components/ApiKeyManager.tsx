@@ -1,3 +1,4 @@
+// START ./wp-plugin-bonsai/src/components/ApiKeyManager.tsx
 import React, { useState } from 'react';
 import { Provider, ProviderStatus } from '@/types';
 
@@ -54,3 +55,4 @@ export function ApiKeyManager({ providerStatus, onProviderStatusChange }: ApiKey
         </div>
     );
 }
+// END ./wp-plugin-bonsai/src/components/ApiKeyManager.tsx

@@ -1,3 +1,4 @@
+// START ./wp-plugin-bonsai/src/components/ReviewResults.tsx
 import React, { useMemo, useState } from 'react';
 import type { ReviewIssue } from '@/types';
 import { IssueCategory, IssueSeverity } from '@/types';
@@ -131,3 +132,4 @@ export function ReviewResults({ issues, onApplyFix, onApplyAllSafeFixes, applyin
     </div>
   );
 }
+// END ./wp-plugin-bonsai/src/components/ReviewResults.tsx

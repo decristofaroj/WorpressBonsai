@@ -1,3 +1,4 @@
+<!-- START ./wp-plugin-bonsai/README.md -->
 # WP Plugin Bonsai: Easy Install Guide (After Download)
 
 Hello! You've made the smart choice to download the project directly. This guide is super simple and will get you running in just a few minutes.
@@ -78,3 +79,4 @@ You're at the final step!
 The terminal will show you a message with a local URL, probably `http://localhost:5173`.
 
 **Congratulations!** Open your web browser (like Chrome or Edge) and go to that `http://localhost:5173` address. Your very own WP Plugin Bonsai is now running on your computer!
+<!-- END ./wp-plugin-bonsai/README.md -->

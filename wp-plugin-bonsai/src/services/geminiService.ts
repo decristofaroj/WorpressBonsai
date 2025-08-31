@@ -1,3 +1,4 @@
+// START ./wp-plugin-bonsai/src/services/geminiService.ts
 import { GoogleGenAI, Type, Content } from '@google/genai';
 import type { ReviewIssue, Plugin, IntegrationResponse, FileModificationPlan, PluginBuildResponse, GeneratedFileResponse, BlueprintResponse, ChatMessage } from '@/types';
 import * as schemas from '@/config/schemas';
@@ -5,12 +6,19 @@ import * as prompts from '@/services/prompts';
 import { LocalPackageAnalysis } from '@/services/localPluginPackager';
 
 const getAiInstance = () => {
-    const apiKey = process.env.API_KEY;
+    const apiKey = process.env.VITE_GEMINI_API_KEY;
     if (!apiKey) {
         return null;
     }
     return new GoogleGenAI({ apiKey });
-}
+};
+
+const getResponseText = (response: { text?: string }, context: string): string => {
+    if (!response.text) {
+        throw new Error(`[Gemini] Empty response from ${context}.`);
+    }
+    return response.text;
+};
 
 const convertSchemaForGemini = (schema: any): any => {
     if (!schema || !schema.type) return {};
@@ -65,7 +73,7 @@ export const runGeminiReview = async (plugins: Plugin[], modelName: string): Pro
         contents: [{role: 'user', parts: [{text: prompts.getReviewPrompt(plugins)}] }],
         config: { responseMimeType: "application/json", responseSchema: convertSchemaForGemini(schemas.reviewSchema) },
     });
-    const parsedResponse = JSON.parse(response.text) as { review: ReviewIssue[] };
+    const parsedResponse = JSON.parse(getResponseText(response, 'review')) as { review: ReviewIssue[] };
     return parsedResponse.review.map(issue => ({ ...issue, source: 'AI Analysis' }));
   } catch (error) {
       handleGeminiError(error);
@@ -82,7 +90,7 @@ export const runGeminiFix = async (plugins: Plugin[], issue: ReviewIssue, modelN
         contents: [{role: 'user', parts: [{text: prompts.getApplyFixPrompt(plugins, issue)}] }],
         config: { responseMimeType: "application/json", responseSchema: convertSchemaForGemini(schemas.fixSchema) },
     });
-    return JSON.parse(response.text) as FileModificationPlan;
+    return JSON.parse(getResponseText(response, 'fix')) as FileModificationPlan;
   } catch (error) {
       handleGeminiError(error);
       throw error; // Re-throw after handling
@@ -105,7 +113,7 @@ export const runGeminiChat = async (messages: ChatMessage[], modelName: string):
                 systemInstruction: { parts: [{ text: prompts.getPluginBuilderChatSystemPrompt() }] },
             }
         });
-        return response.text;
+        return getResponseText(response, 'chat');
     } catch (error) {
         handleGeminiError(error);
         throw error;
@@ -121,7 +129,7 @@ export const runGeminiIntegration = async (prompt: string, modelName: string): P
         contents: [{role: 'user', parts: [{text: prompts.getIntegrationAppPrompt(prompt)}] }],
         config: { responseMimeType: "application/json", responseSchema: convertSchemaForGemini(schemas.integrationAppSchema) },
     });
-    return JSON.parse(response.text) as IntegrationResponse;
+    return JSON.parse(getResponseText(response, 'integration')) as IntegrationResponse;
   } catch (error) {
     handleGeminiError(error);
     throw error;
@@ -137,7 +145,7 @@ export const runGeminiGenerateFile = async (plugin: Plugin, fileDescription: str
             contents: [{role: 'user', parts: [{text: prompts.getGenerateFilePrompt(plugin, fileDescription)}] }],
             config: { responseMimeType: "application/json", responseSchema: convertSchemaForGemini(schemas.generateFileSchema) },
         });
-        return JSON.parse(response.text) as GeneratedFileResponse;
+        return JSON.parse(getResponseText(response, 'generate file')) as GeneratedFileResponse;
     } catch(error) {
         handleGeminiError(error);
         throw error;
@@ -153,7 +161,7 @@ export const runGeminiBlueprint = async (messages: ChatMessage[], modelName: str
             contents: [{role: 'user', parts: [{text: prompts.getBlueprintPrompt(messages)}] }],
             config: { responseMimeType: "application/json", responseSchema: convertSchemaForGemini(schemas.blueprintSchema) },
         });
-        return JSON.parse(response.text) as BlueprintResponse;
+        return JSON.parse(getResponseText(response, 'blueprint')) as BlueprintResponse;
     } catch(error) {
         handleGeminiError(error);
         throw error;
@@ -169,7 +177,7 @@ export const runGeminiPluginBuild = async (messages: ChatMessage[], inputFile: {
             contents: [{role: 'user', parts: [{text: prompts.getPluginBuildPrompt(messages, inputFile)}] }],
             config: { responseMimeType: "application/json", responseSchema: convertSchemaForGemini(schemas.pluginBuildSchema) },
         });
-        return JSON.parse(response.text) as PluginBuildResponse;
+        return JSON.parse(getResponseText(response, 'plugin build')) as PluginBuildResponse;
     } catch(error) {
         handleGeminiError(error);
         throw error;
@@ -185,9 +193,10 @@ export const runGeminiPluginPackage = async (files: {name: string, content: stri
             contents: [{role: 'user', parts: [{text: prompts.getPluginPackagePrompt(files, analysis)}] }],
             config: { responseMimeType: "application/json", responseSchema: convertSchemaForGemini(schemas.pluginBuildSchema) },
         });
-        return JSON.parse(response.text) as PluginBuildResponse;
+        return JSON.parse(getResponseText(response, 'plugin package')) as PluginBuildResponse;
     } catch(error) {
         handleGeminiError(error);
         throw error;
     }
 };
+// END ./wp-plugin-bonsai/src/services/geminiService.ts

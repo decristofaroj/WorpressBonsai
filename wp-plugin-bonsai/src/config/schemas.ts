@@ -1,3 +1,4 @@
+// START ./wp-plugin-bonsai/src/config/schemas.ts
 export const reviewSchema = {
   type: 'object',
   properties: {
@@ -84,3 +85,4 @@ export const pluginBuildSchema = {
   },
   required: ['pluginName', 'files'],
 };
+// END ./wp-plugin-bonsai/src/config/schemas.ts

@@ -1,3 +1,4 @@
+// START ./wp-plugin-bonsai/src/components/ModeSwitcher.tsx
 import React from 'react';
 import type { AppMode } from '@/types';
 
@@ -24,3 +25,4 @@ export function ModeSwitcher({ currentMode, onModeChange }: ModeSwitcherProps): 
         </div>
     );
 }
+// END ./wp-plugin-bonsai/src/components/ModeSwitcher.tsx

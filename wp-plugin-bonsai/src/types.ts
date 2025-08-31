@@ -1,3 +1,4 @@
+// START ./wp-plugin-bonsai/src/types.ts
 
 
 
@@ -135,3 +136,4 @@ export interface UploadedFile {
     content: string;
     path: string;
 }
+// END ./wp-plugin-bonsai/src/types.ts

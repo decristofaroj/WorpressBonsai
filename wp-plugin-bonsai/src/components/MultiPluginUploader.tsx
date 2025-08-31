@@ -1,3 +1,4 @@
+// START ./wp-plugin-bonsai/src/components/MultiPluginUploader.tsx
 import React, { useRef } from 'react';
 import type { Plugin } from '@/types';
 import { getFileIcon } from '@/components/icons/FileIcons';
@@ -95,3 +96,4 @@ export function MultiPluginUploader(props: MultiPluginUploaderProps): React.Reac
     </div>
   );
 }
+// END ./wp-plugin-bonsai/src/components/MultiPluginUploader.tsx

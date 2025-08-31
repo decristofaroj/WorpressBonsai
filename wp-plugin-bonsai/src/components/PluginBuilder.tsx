@@ -1,3 +1,4 @@
+// START ./wp-plugin-bonsai/src/components/PluginBuilder.tsx
 import React, { useState, useCallback, useRef, useEffect } from 'react';
 import { buildPlugin, generateBlueprint, continuePluginChat } from '@/services/aiService';
 import { Loader } from '@/components/Loader';
@@ -163,3 +164,4 @@ export function PluginBuilder({ providerStatus, enabledModels }: PluginBuilderPr
         </div>
     );
 }
+// END ./wp-plugin-bonsai/src/components/PluginBuilder.tsx
