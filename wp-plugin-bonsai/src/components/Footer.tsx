@@ -1,3 +1,4 @@
+// START ./wp-plugin-bonsai/src/components/Footer.tsx
 import React from 'react';
 
 interface FooterProps {
@@ -17,3 +18,4 @@ export function Footer({ isOnline }: FooterProps): React.ReactNode {
     </footer>
   );
 }
+// END ./wp-plugin-bonsai/src/components/Footer.tsx

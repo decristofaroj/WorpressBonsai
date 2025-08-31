@@ -1,3 +1,4 @@
+// START ./wp-plugin-bonsai/src/services/localCodePatcher.ts
 import type { CodeChangeInstruction } from '@/types';
 
 class LocalCodePatcher {
@@ -38,3 +39,4 @@ class LocalCodePatcher {
 }
 
 export const localCodePatcher = new LocalCodePatcher();
+// END ./wp-plugin-bonsai/src/services/localCodePatcher.ts

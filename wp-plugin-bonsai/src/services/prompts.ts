@@ -1,3 +1,4 @@
+// START ./wp-plugin-bonsai/src/services/prompts.ts
 import type { Plugin, ReviewIssue, ChatMessage } from '@/types';
 import { LocalPackageAnalysis } from '@/services/localPluginPackager';
 
@@ -108,3 +109,4 @@ export const getPluginPackagePrompt = (files: {name: string, content: string}[],
     
     **Output:** Return a single JSON object containing the plugin slug and a list of all files with their final paths and content.`;
 };
+// END ./wp-plugin-bonsai/src/services/prompts.ts

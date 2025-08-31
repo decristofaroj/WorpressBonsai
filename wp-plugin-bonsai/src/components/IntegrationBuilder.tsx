@@ -1,3 +1,4 @@
+// START ./wp-plugin-bonsai/src/components/IntegrationBuilder.tsx
 import React, { useState, useCallback } from 'react';
 import jsPDF from 'jspdf';
 import { generateIntegration } from '@/services/aiService';
@@ -112,3 +113,4 @@ export function IntegrationBuilder({ providerStatus, enabledModels }: Integratio
         </div>
     );
 }
+// END ./wp-plugin-bonsai/src/components/IntegrationBuilder.tsx

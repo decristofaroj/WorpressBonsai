@@ -1,3 +1,4 @@
+// START ./wp-plugin-bonsai/src/components/HistoryControls.tsx
 import React from 'react';
 
 interface HistoryControlsProps {
@@ -33,3 +34,4 @@ export function HistoryControls({ onUndo, onRedo, canUndo, canRedo }: HistoryCon
         </div>
     );
 }
+// END ./wp-plugin-bonsai/src/components/HistoryControls.tsx

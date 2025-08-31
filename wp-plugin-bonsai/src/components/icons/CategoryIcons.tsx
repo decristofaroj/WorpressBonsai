@@ -1,5 +1,4 @@
-import React from 'react';
-
+// START ./wp-plugin-bonsai/src/components/icons/CategoryIcons.tsx
 type IconProps = { className?: string };
 
 export const SecurityIcon = ({ className = 'h-6 w-6' }: IconProps) => (
@@ -31,3 +30,4 @@ export const CodeQualityIcon = ({ className = 'h-6 w-6' }: IconProps) => (
         <path strokeLinecap="round" strokeLinejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
     </svg>
 );
+// END ./wp-plugin-bonsai/src/components/icons/CategoryIcons.tsx

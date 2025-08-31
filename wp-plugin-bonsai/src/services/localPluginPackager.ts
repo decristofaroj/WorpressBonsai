@@ -1,3 +1,4 @@
+// START ./wp-plugin-bonsai/src/services/localPluginPackager.ts
 import { UploadedFile } from '@/types';
 
 export interface PluginHeaderData {
@@ -106,3 +107,4 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 `;
     return { fileName, code };
 };
+// END ./wp-plugin-bonsai/src/services/localPluginPackager.ts

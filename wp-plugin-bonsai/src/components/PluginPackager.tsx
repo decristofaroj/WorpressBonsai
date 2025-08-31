@@ -1,3 +1,4 @@
+// START ./wp-plugin-bonsai/src/components/PluginPackager.tsx
 import React, { useState, useCallback, useRef } from 'react';
 import JSZip from 'jszip';
 import { packagePlugin } from '@/services/aiService';
@@ -60,7 +61,7 @@ export function PluginPackager({ providerStatus, enabledModels }: PluginPackager
         // Step 1: Perform local analysis
         const analysis = analyzePackageContents(uploadedFiles);
         
-        let filesForAI = [...uploadedFiles];
+        const filesForAI = [...uploadedFiles];
         // Step 2: Handle missing uninstall.php locally if needed
         if (!analysis.hasUninstall) {
             const boilerplate = getBoilerplateUninstall();
@@ -131,3 +132,4 @@ export function PluginPackager({ providerStatus, enabledModels }: PluginPackager
         </div>
     );
 }
+// END ./wp-plugin-bonsai/src/components/PluginPackager.tsx

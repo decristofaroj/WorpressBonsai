@@ -1,3 +1,4 @@
+// START ./wp-plugin-bonsai/src/components/Loader.tsx
 import React from 'react';
 
 interface LoaderProps {
@@ -15,3 +16,4 @@ export function Loader({ message = 'AI is processing your request...' }: LoaderP
     </div>
   );
 }
+// END ./wp-plugin-bonsai/src/components/Loader.tsx

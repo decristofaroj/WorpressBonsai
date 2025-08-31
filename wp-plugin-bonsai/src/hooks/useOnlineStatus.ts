@@ -1,3 +1,4 @@
+// START ./wp-plugin-bonsai/src/hooks/useOnlineStatus.ts
 import { useState, useEffect } from 'react';
 
 export function useOnlineStatus(): boolean {
@@ -15,3 +16,4 @@ export function useOnlineStatus(): boolean {
   }, []);
   return isOnline;
 }
+// END ./wp-plugin-bonsai/src/hooks/useOnlineStatus.ts

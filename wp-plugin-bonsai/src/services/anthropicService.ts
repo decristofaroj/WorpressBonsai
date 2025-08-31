@@ -1,3 +1,4 @@
+// START ./wp-plugin-bonsai/src/services/anthropicService.ts
 import Anthropic from '@anthropic-ai/sdk';
 import type { Plugin, ReviewIssue, IntegrationResponse, FileModificationPlan, PluginBuildResponse, GeneratedFileResponse, BlueprintResponse, ChatMessage } from '@/types';
 import * as schemas from '@/config/schemas';
@@ -113,3 +114,4 @@ export const runAnthropicPluginPackage = async (files: {name: string, content: s
   const prompt = prompts.getPluginPackagePrompt(files, analysis);
   return callAnthropicTool<PluginBuildResponse>(modelName, [{ role: 'user', content: prompt }], schemas.pluginBuildSchema, 'format_plugin_package');
 };
+// END ./wp-plugin-bonsai/src/services/anthropicService.ts

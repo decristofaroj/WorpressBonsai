@@ -1,0 +1,11 @@
+/* START ./wp-plugin-bonsai/src/index.css */
+/* Global styles for WP Plugin Bonsai */
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  background-color: #0f172a; /* slate-900 */
+  color: #e2e8f0; /* slate-200 */
+}
+/* END ./wp-plugin-bonsai/src/index.css */

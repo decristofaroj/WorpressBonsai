@@ -1,3 +1,4 @@
+// START ./wp-plugin-bonsai/src/components/WorkspaceManager.tsx
 import React, { useState } from 'react';
 import type { Workspace } from '@/types';
 
@@ -52,3 +53,4 @@ export function WorkspaceManager({ workspaces, activeWorkspaceId, onSwitch, onAd
         </div>
     );
 }
+// END ./wp-plugin-bonsai/src/components/WorkspaceManager.tsx

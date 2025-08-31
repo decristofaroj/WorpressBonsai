@@ -1,5 +1,4 @@
-import React from 'react';
-
+// START ./wp-plugin-bonsai/src/components/icons/SeverityIcons.tsx
 type IconProps = { className?: string };
 
 export const CriticalIcon = ({ className = 'h-5 w-5' }: IconProps) => (
@@ -19,3 +18,4 @@ export const InfoIcon = ({ className = 'h-5 w-5' }: IconProps) => (
     <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
   </svg>
 );
+// END ./wp-plugin-bonsai/src/components/icons/SeverityIcons.tsx

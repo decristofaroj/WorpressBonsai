@@ -1,3 +1,4 @@
+// START ./wp-plugin-bonsai/src/components/ConfirmationModal.tsx
 import React from 'react';
 import { ConfirmationState } from '@/types';
 
@@ -27,3 +28,4 @@ export function ConfirmationModal({ confirmation }: ConfirmationModalProps): Rea
         </div>
     );
 }
+// END ./wp-plugin-bonsai/src/components/ConfirmationModal.tsx

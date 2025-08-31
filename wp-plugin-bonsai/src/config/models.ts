@@ -1,3 +1,4 @@
+// START ./wp-plugin-bonsai/src/config/models.ts
 import { AIModel } from '@/types';
 
 export const models: AIModel[] = [
@@ -26,3 +27,4 @@ export const models: AIModel[] = [
     modelName: 'gpt-4o',
   },
 ];
+// END ./wp-plugin-bonsai/src/config/models.ts

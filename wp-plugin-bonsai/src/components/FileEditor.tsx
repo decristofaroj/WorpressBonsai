@@ -1,3 +1,4 @@
+// START ./wp-plugin-bonsai/src/components/FileEditor.tsx
 import React, { useRef, useEffect } from 'react';
 import { Plugin, Workspace, PluginFile, AIModel } from '@/types';
 import { ModelSelector } from '@/components/ModelSelector';
@@ -81,3 +82,4 @@ export function FileEditor({ workspace, onUpdatePlugins, onReview, isActionDisab
     </div>
   );
 }
+// END ./wp-plugin-bonsai/src/components/FileEditor.tsx
